@@ -6,11 +6,6 @@ dependencies {
   api deps.kotlinStdlib
   api deps.rxJava
   implementation deps.rxAndroid
-
-  androidTestImplementation project(':testing-utils')
-  androidTestImplementation deps.androidXTestCore
-  androidTestImplementation deps.androidXTestRunner
-  androidTestImplementation deps.androidXTestRules
 }
 
 android {
@@ -18,8 +13,6 @@ android {
 
   defaultConfig {
     minSdkVersion buildConfig.minSdkVersion
-
-    testInstrumentationRunner 'com.jakewharton.rxbinding4.RxBindingTestRunner'
   }
 
   compileOptions {
@@ -28,7 +21,7 @@ android {
   }
 
   kotlinOptions {
-    jvmTarget = '1.8'
+    jvmTarget = '11'
   }
 
   lintOptions {
@@ -43,4 +36,4 @@ android {
   }
 }
 
-apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+//apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
